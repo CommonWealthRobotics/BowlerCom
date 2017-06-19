@@ -1,7 +1,6 @@
 /**
  * Bowler Communication System
  */
-#include <Arduino.h>
 #include <BowlerCom.h>
 #include <Platform/include/arch/Arduino/IOAbstraction.hpp>
 
@@ -75,6 +74,9 @@ void BowlerCom::begin_local(Stream * port) {
 	comPort = port;
 
 }
+#if defined(__MBED__)
+
+#else
 void showString(PGM_P s,Print_Level l,char newLine) {
 	if(!okToprint(l)) {
 		return;
@@ -86,8 +88,9 @@ void showString(PGM_P s,Print_Level l,char newLine) {
 	setColor(l);
 	char c;
 	while ((c = pgm_read_byte(s++)) != 0)
-	putCharDebug(c);
+		putCharDebug(c);
 }
+#endif
 uint16_t putStream(uint8_t * buffer, uint16_t datalength) {
 	uint16_t i;
 	for (i = 0; i < datalength; i++) {
@@ -192,4 +195,3 @@ void startDebugPint(Stream * port) {
 	println_W("Warning Prints");
 	println_I("Info Prints");
 }
-

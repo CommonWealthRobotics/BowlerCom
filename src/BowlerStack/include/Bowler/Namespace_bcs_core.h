@@ -9,7 +9,7 @@
 #define NAMESPACE_BCS_CORE_H_
 
 #include "namespace.h"
-#include "Defines.h"
+#include  "Defines.h"
 #ifdef __cplusplus
 extern "C"{
 #endif

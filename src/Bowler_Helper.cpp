@@ -50,7 +50,7 @@ uint8_t CalcCRC(BowlerPacket *Packet) {
  */
 uint8_t CheckCRC(BowlerPacket *Packet) {
     uint8_t v = CalcCRC(Packet);
-    if (Packet->use.head.CRC == v)
+    if (Packet->use.head.BOWLER_CRC == v)
         return true;
     return false;
 }
@@ -59,7 +59,7 @@ uint8_t CheckCRC(BowlerPacket *Packet) {
  */
 void SetCRC(BowlerPacket * Packet) {
     uint8_t v = CalcCRC(Packet);
-    Packet->use.head.CRC = v;
+    Packet->use.head.BOWLER_CRC = v;
 }
 /*
  * Calculate waht the CRC should be for a given data section
@@ -239,7 +239,7 @@ float interpolate(INTERPOLATE_DATA * data, float currentTime) {
     // elapsed must always be greater than the set time, current distance will be lower then
     // total distance
     currentDistance = totalDistance * (elapsed/setTime);
-    
+
     // location will be an offset from the start
     currentLocation = currentDistance+start;
 
