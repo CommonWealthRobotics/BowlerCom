@@ -46,6 +46,8 @@
 	#include "arch/xilinx/BowlerConfig.h"
 #elif defined(ARDUINO)
 	#include "Platform/include/arch/Arduino/BowlerConfig.h"
+#elif defined(__MBED__)
+		#include "Platform/include/arch/mbed/BowlerConfig.h"
 #else
 	//#error Unknown archetecture!! See Bowler.h
 	//#warning this is a hacky work around

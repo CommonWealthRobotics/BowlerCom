@@ -5,12 +5,16 @@
 #ifndef ARDUBCS_H
 #define ARDUBCS_H
 #define comBuffSize 256
-
-#include <Arduino.h>
-#ifdef __cplusplus
-	#include <SoftwareSerial.h>
-	#include <Servo.h>
+#ifdef __MBED__
+	#include <mbed.h>
+#else
+	#include <Arduino.h>
+	#ifdef __cplusplus
+		#include <SoftwareSerial.h>
+		#include <Servo.h>
+	#endif
 #endif
+
 
 #include "BowlerStack/include/Bowler/Bowler.h"
 #include "BowlerStack/include/DyIO/PID.h"
