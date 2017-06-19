@@ -40,7 +40,7 @@ extern "C"{
 		unsigned			MessageID    :7;			// Semi unique Transaction ID
 		unsigned    		ResponseFlag :1;		// Is this packet a response packet
 		unsigned char		DataLegnth;			// Length of data to come
-		unsigned char		CRC;				// CRC for packet
+		unsigned char		BOWLER_CRC;				// CRC for packet
 		unsigned long int				RPC;				// 4 byte RPC stored as a 32 bit int for single compare;
 	} HEADER;
 #define FullPacketDataSize 252

@@ -296,7 +296,7 @@ int getUpperPidHistoresis(int group);
 int getLowerPidHistoresis(int group);
 int getPidStop(int group);
 
-void updatePidAsync();
+void updatePidAsync(BowlerPacket *Packet,boolean (*pidAsyncCallbackPtr)(BowlerPacket *Packet));
 void pidReset(uint8_t chan, int32_t val);
 float pidResetNoStop(uint8_t chan, int32_t val);
 void pushAllPIDPositions(BowlerPacket *Packet, boolean (*pidAsyncCallbackPtr)(BowlerPacket *Packet));

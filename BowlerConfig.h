@@ -2,7 +2,7 @@
 #define BOWLERCONFIG_H_
 
 
-#include <mbed.h>
+#include <Arduino.h>
 
 #include <BowlerStack/include/DyIO/BOLWER_EEPROM.h>
 #ifdef __cplusplus
